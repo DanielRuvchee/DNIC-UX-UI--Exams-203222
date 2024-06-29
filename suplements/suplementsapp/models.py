@@ -23,3 +23,6 @@ class Suplement(models.Model):
         return self.name
     
 
+
+class UploadImage(models.Model):
+    image = models.ImageField(upload_to="images/", null=True, blank=True)
