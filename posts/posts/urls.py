@@ -1,5 +1,5 @@
 """
-URL configuration for events project.
+URL configuration for posts project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from eventsapp import views
-
+from postsapp.views import index, posts
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index, name='index'),
-    path('askforevents/', views.ask_events, name='ask_events'),
-]
+    path('index/', index, name="index"),
+    path('posts/', posts, name='posts'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

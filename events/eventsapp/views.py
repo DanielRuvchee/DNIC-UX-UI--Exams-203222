@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def index(request):
     return render(request,'index.html')
+
+
+def ask_events(request):
+    return(request, 'ask_events.html')
