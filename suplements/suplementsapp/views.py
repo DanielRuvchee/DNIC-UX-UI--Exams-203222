@@ -13,3 +13,7 @@ def picture(request):
     queryset = UploadImage.objects.filter().all()
     context = {'pictures': queryset}
     return render(request,'index.html', context = context)
+
+
+def suplement_detail(request, id):
+    return render(request, 'suplement_detail.html', context={'suplement': Suplement.objects.get(id=id)})

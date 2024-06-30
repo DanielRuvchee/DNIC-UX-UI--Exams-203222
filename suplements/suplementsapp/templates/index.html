@@ -26,8 +26,8 @@
             <div class="row">
                 {% for suplement in suplements %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
-                        <a href="#" class="text-decoration-none">
+                    <div class="card mb-4" onclick="window.location.replace('suplement_detail/{{ suplement.id }}')">
+                        <a href="" class="text-decoration-none">
                             <img src="{{MEDIA_URL}}{{ suplement.image.url }}" class="card-img-top">
                         </a>
                         <div class="card-body text-center">
