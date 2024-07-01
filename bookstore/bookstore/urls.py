@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from BookStoreApp.views import index, book_detail
+from BookStoreApp.views import index, book_detail, add_book
 from django.conf import settings
 
 from django.conf.urls.static import static
@@ -13,6 +13,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index, name='index'),
     path('suplement/<id>/', book_detail, name='book_detail'),
+    path('books/add', add_book, name='add_book'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
